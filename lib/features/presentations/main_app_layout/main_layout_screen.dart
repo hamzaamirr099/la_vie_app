@@ -1,11 +1,9 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_offline/flutter_offline.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:la_vie/core/utils/bloc/main_layout_bloc/main_cubit.dart';
 import 'package:la_vie/core/utils/bloc/main_layout_bloc/main_states.dart';
-import '../../../core/shared/components.dart';
 import '../../../core/shared/constants.dart';
 
 
@@ -29,56 +27,42 @@ class MainLayout extends StatelessWidget {
       builder: (context, state) {
         return Builder(
           builder: (BuildContext context) {
-            return OfflineBuilder(
-              connectivityBuilder: (BuildContext context,
-                  ConnectivityResult connectivity, Widget child) {
-                final bool connected = connectivity != ConnectivityResult.none;
-                if(connected)
-                {
-                  return Scaffold(
+            return Scaffold(
 
-                    floatingActionButton: FloatingActionButton(
-                      heroTag: "homeBtn",
-                      onPressed: () {
-                        mainCubit.changeBottomNavBar(4);
+              floatingActionButton: FloatingActionButton(
+                heroTag: "homeBtn",
+                onPressed: () {
+                  mainCubit.changeBottomNavBar(4);
 
-                      },
-                      child: SvgPicture.asset("assets/images/homeLogo.svg"),
+                },
+                child: SvgPicture.asset("assets/images/homeLogo.svg"),
 
-                      //params
-                    ),
-                    floatingActionButtonLocation:
-                    FloatingActionButtonLocation.centerDocked,
-                    bottomNavigationBar: AnimatedBottomNavigationBar(
-                      notchSmoothness: NotchSmoothness.smoothEdge,
+                //params
+              ),
+              floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+              bottomNavigationBar: AnimatedBottomNavigationBar(
+                notchSmoothness: NotchSmoothness.smoothEdge,
 
-                      icons: const [
-                        Icons.description_outlined,
-                        Icons.qr_code_scanner,
-                        Icons.notifications_none_outlined,
-                        Icons.account_circle_outlined,
-                      ],
-                      activeIndex: mainCubit.activeBottomNavBarIndex,
-                      gapLocation: GapLocation.center,
-                      inactiveColor: Colors.black,
-                      activeColor: mainGreenColor,
+                icons: const [
+                  Icons.description_outlined,
+                  Icons.qr_code_scanner,
+                  Icons.notifications_none_outlined,
+                  Icons.account_circle_outlined,
+                ],
+                activeIndex: mainCubit.activeBottomNavBarIndex,
+                gapLocation: GapLocation.center,
+                inactiveColor: Colors.black,
+                activeColor: mainGreenColor,
 
-                      onTap: (index) {
-                        debugPrint(index.toString());
-                        mainCubit.changeBottomNavBar(index);
-                      },
+                onTap: (index) {
+                  debugPrint(index.toString());
+                  mainCubit.changeBottomNavBar(index);
+                },
 
-                      //other params
-                    ),
-                    body: mainCubit.screens[mainCubit.activeBottomNavBarIndex],
-                  );
-                }
-                else
-                {
-                  return buildNoInternetWidget();
-                }
-              },
-              child: Container(),
+                //other params
+              ),
+              body: mainCubit.screens[mainCubit.activeBottomNavBarIndex],
             );
           },
         );
