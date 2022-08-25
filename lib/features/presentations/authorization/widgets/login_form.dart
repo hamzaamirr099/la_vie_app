@@ -5,12 +5,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:la_vie/core/shared/constants.dart';
 import 'package:la_vie/core/utils/network/local/cach_helper.dart';
 import 'package:la_vie/core/widgets/default_text_form_field.dart';
-import 'package:la_vie/features/presentations/authorization/authorization_states.dart';
-import 'package:la_vie/features/presentations/home/screens/home_screen.dart';
+import 'package:la_vie/core/utils/bloc/authorization_bloc/authorization_states.dart';
 import 'package:la_vie/features/presentations/main_app_layout/main_layout_screen.dart';
 import '../../../../core/shared/components.dart';
 import '../../../../core/widgets/default_button.dart';
-import '../authorization_cubit.dart';
+import '../../../../core/utils/bloc/authorization_bloc/authorization_cubit.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({Key? key}) : super(key: key);

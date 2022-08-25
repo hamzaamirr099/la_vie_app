@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:la_vie/features/presentations/authorization/authorization_states.dart';
+import 'package:la_vie/core/utils/bloc/authorization_bloc/authorization_states.dart';
 import 'package:la_vie/features/presentations/authorization/widgets/login_form.dart';
 import 'package:la_vie/features/presentations/authorization/widgets/sign_up_form.dart';
-import '../authorization_cubit.dart';
+import '../../../../core/utils/bloc/authorization_bloc/authorization_cubit.dart';
 
 class AuthorizationScreen extends StatelessWidget {
   const AuthorizationScreen({Key? key}) : super(key: key);

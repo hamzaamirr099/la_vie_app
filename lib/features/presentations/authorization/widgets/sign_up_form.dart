@@ -7,8 +7,8 @@ import '../../../../core/shared/constants.dart';
 import '../../../../core/utils/network/local/cach_helper.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../../../core/widgets/default_text_form_field.dart';
-import '../../authorization/authorization_states.dart';
-import '../authorization_cubit.dart';
+import '../../../../core/utils/bloc/authorization_bloc/authorization_states.dart';
+import '../../../../core/utils/bloc/authorization_bloc/authorization_cubit.dart';
 
 class SignUpForm extends StatelessWidget {
   SignUpForm({Key? key}) : super(key: key);
