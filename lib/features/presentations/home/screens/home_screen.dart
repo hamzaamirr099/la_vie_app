@@ -3,22 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:la_vie/core/shared/constants.dart';
-import 'package:la_vie/core/utils/bloc/main_layout_bloc/main_cubit.dart';
 import 'package:la_vie/core/widgets/default_button.dart';
 import 'package:la_vie/features/presentations/cart/screens/cart_screen.dart';
 import 'package:la_vie/features/presentations/exam/screens/exam_screen.dart';
-import 'package:la_vie/features/presentations/forums/screens/forums_screen.dart';
 import 'package:la_vie/features/presentations/home/widgets/category_item.dart';
 import 'package:la_vie/features/presentations/home/widgets/product_item.dart';
-import 'package:la_vie/features/presentations/profile/screens/profile_screen.dart';
-import 'package:la_vie/features/presentations/scan/screens/qr_code_screen.dart';
 import 'package:la_vie/features/presentations/search/screens/search_screen.dart';
 import 'package:la_vie/models/products_model.dart';
 import '../../../../core/utils/bloc/home_bloc/home_cubit.dart';
 import '../../../../core/utils/bloc/home_bloc/home_states.dart';
-import '../../../../core/utils/network/local/cach_helper.dart';
 import '../../../../core/widgets/default_text_form_field_v2.dart';
-import '../../notifications/screens/notification_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);

@@ -27,7 +27,7 @@ class HomeCubit extends Cubit<HomeStates> {
 
   void showSearchResult()
   {
-    emit(SuccessFetchProductsState());
+    emit(SearchState());
   }
   Future<void> getAllProducts({required String token}) async {
     try {
@@ -35,8 +35,7 @@ class HomeCubit extends Cubit<HomeStates> {
         url: '/api/v1/products',
         token: token,
       );
-      print(value.data);
-      showToastMessage(message: "${value.data['message']}");
+      // showToastMessage(message: "${value.data['message']}");
       productsModel = ProductsModel.fromJson(value.data);
 
       listToView = productsModel!.data!;
@@ -106,9 +105,6 @@ class HomeCubit extends Cubit<HomeStates> {
 
     }
 
-    print("plants areeeeeeeeeeeeeee ${plants.toString()}");
-    print("seeds areeeeeeeeeeeeeee ${seeds.toString()}");
-    print("tools areeeeeeeeeeeeeee ${tools.toString()}");
   }
 
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:la_vie/core/shared/constants.dart';
 import 'package:la_vie/features/presentations/forums/widgets/comment_item.dart';
 import 'package:la_vie/models/forum_data_model.dart';
 
