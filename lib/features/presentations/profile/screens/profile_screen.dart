@@ -199,7 +199,7 @@ class ProfileScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(bottom: 20.0),
                             child: DefaultButton(
-                              // width: 100,
+                                // width: 100,
                                 childWidget: const Text(
                                   "Go to blogs",
                                   style: TextStyle(color: Colors.white),
@@ -219,8 +219,9 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
-          fallback: (context) =>
-              const Center(child: CircularProgressIndicator()),
+          fallback: (context) => const Center(
+            child: CircularProgressIndicator(),
+          ),
         );
       },
     );

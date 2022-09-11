@@ -18,13 +18,13 @@ class MainLayout extends StatelessWidget {
     if(mainCubit.activeBottomNavBarIndex != 4) {
       mainCubit.changeBottomNavBar(4);
     }
-
     //fetch all important data at first
     mainCubit.initialization(context);// must handle this to not call if offline
 
     return BlocConsumer<MainCubit, MainStates>(
       listener: (context, state) {},
       builder: (context, state) {
+
         return Builder(
           builder: (BuildContext context) {
             return Scaffold(

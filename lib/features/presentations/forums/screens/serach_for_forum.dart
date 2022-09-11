@@ -5,7 +5,6 @@ import 'package:la_vie/core/shared/constants.dart';
 import 'package:la_vie/core/widgets/default_text_form_field_v2.dart';
 import '../../../../core/utils/bloc/forum_bloc/forum_cubit.dart';
 import '../../../../core/utils/bloc/forum_bloc/forum_states.dart';
-import '../../../../core/utils/network/local/cach_helper.dart';
 import '../widgets/forum_post_item.dart';
 
 class SearchForForumScreen extends StatelessWidget {
@@ -23,7 +22,7 @@ class SearchForForumScreen extends StatelessWidget {
             DefaultFormFieldV2(
               onFieldSubmitted: (value) {
                 cubit.searchForForums(token:
-                    userToken, searchString: value!);
+                    userToken, searchString: value!.toLowerCase());
               },
             ),
             const SizedBox(height: 20.0,),

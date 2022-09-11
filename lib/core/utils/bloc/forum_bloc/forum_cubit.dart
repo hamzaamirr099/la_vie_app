@@ -59,7 +59,7 @@ class ForumCubit extends Cubit<ForumStates> {
       }
       else
       {
-        debugPrint(e.response!.data);
+        // debugPrint(e.response!.data);
         showToastMessage(message: "${e.response!.data['message']}", toastColor: Colors.red);
       }
       emit(ErrorAllForumsState());

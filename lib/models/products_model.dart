@@ -11,9 +11,9 @@ class ProductsModel{
   {
     type = map['type'];
     message = map['message'];
-    map['data'].forEach((element){
+    map['data'] != null ? map['data'].forEach((element){
       data!.add(ProductData.fromJson(element));
-    });
+    }) : [];
   }
 }
 

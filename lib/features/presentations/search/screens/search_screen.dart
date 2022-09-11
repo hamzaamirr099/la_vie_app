@@ -36,11 +36,11 @@ class SearchScreen extends StatelessWidget {
               hintText: "Search",
               prefixIcon: Icons.search,
               textInputType: TextInputType.text,
-              onFieldSubmitted: (value) {
+              onChangedFunction: (value) {
                 homeCubit.searchResult = [];
                 for (var item in listToSearchFrom) {
 
-                  if (item.name!.toLowerCase() == value!.toLowerCase()) {
+                  if (value!.toLowerCase().matchAsPrefix(item.name!.toLowerCase()) != null) {
                     homeCubit.searchResult.add(item);
                   }
 

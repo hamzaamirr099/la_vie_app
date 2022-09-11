@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_offline/flutter_offline.dart';
 import 'package:la_vie/core/utils/bloc/blogs_bloc/blog_cubit.dart';
 import 'package:la_vie/core/utils/bloc/main_layout_bloc/main_cubit.dart';
 import 'package:la_vie/core/utils/bloc/user_profile_bloc/profile_cubit.dart';
-import 'package:la_vie/features/presentations/authorization/screens/authorization_screen.dart';
-import 'package:la_vie/features/presentations/blogs/screens/blog_screen.dart';
-import 'package:la_vie/features/presentations/forums/screens/forums_screen.dart';
 import 'package:la_vie/features/presentations/splash/splash_screen.dart';
 import 'core/shared/constants.dart';
 import 'core/utils/bloc/cart_bloc/cart_cubit.dart';
@@ -14,8 +10,6 @@ import 'core/utils/bloc/forum_bloc/forum_cubit.dart';
 import 'core/utils/bloc/home_bloc/home_cubit.dart';
 import 'core/utils/network/local/cach_helper.dart';
 import 'core/utils/network/remote/dio_helper.dart';
-import 'features/presentations/main_app_layout/main_layout_screen.dart';
-
 
 void main() async{
   WidgetsFlutterBinding

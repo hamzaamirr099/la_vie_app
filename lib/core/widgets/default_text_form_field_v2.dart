@@ -7,6 +7,7 @@ class DefaultFormFieldV2 extends StatelessWidget {
   TextEditingController? controller;
   VoidCallback? onTapFunction;
   String? Function(String?)? onFieldSubmitted;
+  String? Function(String?)? onChangedFunction;
   TextInputType? textInputType;
   bool? showCursorFlag;
 
@@ -20,6 +21,7 @@ class DefaultFormFieldV2 extends StatelessWidget {
       this.showCursorFlag,
         this.controller,
         this.onFieldSubmitted,
+        this.onChangedFunction,
       })
       : super(key: key);
 
@@ -39,6 +41,7 @@ class DefaultFormFieldV2 extends StatelessWidget {
       ),
       onTap: onTapFunction,
       onFieldSubmitted: onFieldSubmitted,
+      onChanged: onChangedFunction,
       keyboardType: textInputType,
       showCursor: showCursorFlag,
     );

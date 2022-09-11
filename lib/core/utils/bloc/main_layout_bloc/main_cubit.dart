@@ -34,6 +34,7 @@ class MainCubit extends Cubit<MainStates> {
   //fetch data
   void initialization(BuildContext context)
   {
+
     HomeCubit.get(context).getAllProducts(token: userToken);
     ForumCubit.get(context).getAllForums(token: userToken);
     if(flagForFetchFromShared == 0) {

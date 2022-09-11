@@ -10,9 +10,12 @@ import 'package:la_vie/features/presentations/home/widgets/category_item.dart';
 import 'package:la_vie/features/presentations/home/widgets/product_item.dart';
 import 'package:la_vie/features/presentations/search/screens/search_screen.dart';
 import 'package:la_vie/models/products_model.dart';
+import '../../../../core/shared/components.dart';
 import '../../../../core/utils/bloc/home_bloc/home_cubit.dart';
 import '../../../../core/utils/bloc/home_bloc/home_states.dart';
+import '../../../../core/utils/network/local/cach_helper.dart';
 import '../../../../core/widgets/default_text_form_field_v2.dart';
+import '../../authorization/screens/authorization_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -36,6 +39,32 @@ class HomeScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             elevation: 0.0,
+            leading: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: IconButton(
+                onPressed: (){
+                  showDialogMessage(
+                    context: context,
+                    firstChoiceFunction: () {
+                      Navigator.pop(context);
+                    },
+                    secondChoiceFunction: () {
+                      CacheHelper.removeAllSharedData();
+                      // profileCubit.userData = null;
+                      debugPrint("logged out");
+                      navigateAndRelease(
+                          context, AuthorizationScreen());
+                    },
+                    title: "Logout",
+                    body: "Are you sure to Logout?",
+                    firstActionName: "Cancel",
+                    secondActionName: "Logout",
+
+                  );
+                },
+                icon: const Icon(Icons.logout),
+              ),
+            ),
             actions: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
